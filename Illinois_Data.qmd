@@ -1,5 +1,45 @@
 ---
 title: "Illinois_Data"
 format: html
+execute: 
+   warning: false
 ---
+
+# Loading packages
+```{r}
+library(readxl)
+library(dplyr)
+```
+
+# Analyzing different tabs in excel sheet
+```{r}
+excel_sheets("school_data/2022-Report-Card-Public-Data-Set.xlsx")
+```
+
+# Loading 2022 dataset:
+
+# Loading specfically ela, math, and science scores
+```{r}
+illinois_data_2022 <- read_xlsx("school_data/2022-Report-Card-Public-Data-Set.xlsx", sheet = "ELA Math Science")
+```
+
+# Loading general information about schools
+
+```{r}
+test <- read_xlsx("school_data/2022-Report-Card-Public-Data-Set.xlsx", sheet = "General")
+```
+
+# Basic exploration of data:
+
+# Found there to be 3 types of scores: for each district, school, and statewide
+```{r}
+unique(illinois_data_2022$Type)
+```
+
+
+
+
+
+
+
 
