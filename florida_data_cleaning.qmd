@@ -1,0 +1,149 @@
+---
+title: "florida_data_cleaning"
+format: html
+---
+
+# Loading packages
+```{r}
+library(readxl)
+library(dplyr)
+```
+
+# 2024 data
+## Third Grade:
+```{r, message = false}
+# Load Data
+florida_ela_2024_third_grade <- read_xls("school_data/florida_data/ela_2024/3ELA03SRDSpring24.xls",skip = 5, col_names = FALSE)
+
+# Fix column names
+colnames(florida_ela_2024_third_grade) <- c("District Number", "District Name", "Grade",
+                                     "Number of Students", "Mean Scale Score", 
+                                     "Percentage in Level 3 or Above",
+                                     "Percentage in Achievement Level 1",
+                                     "Percentage in Achievement Level 2",
+                                     "Percentage in Achievement Level 3",
+                                     "Percentage in Achievement Level 4",
+                                     "Percentage in Achievement Level 5" )
+```
+
+## Fourth grade:
+```{r, message = false}
+# Load Data
+florida_ela_2024_fourth_grade <- read_xls("school_data/florida_data/ela_2024/4ELA04SRDSpring24.xls",skip = 5, col_names = FALSE)
+
+# Fix column names
+colnames(florida_ela_2024_fourth_grade) <- c("District Number", "District Name", "Grade",
+                                     "Number of Students", "Mean Scale Score", 
+                                     "Percentage in Level 3 or Above",
+                                     "Percentage in Achievement Level 1",
+                                     "Percentage in Achievement Level 2",
+                                     "Percentage in Achievement Level 3",
+                                     "Percentage in Achievement Level 4",
+                                     "Percentage in Achievement Level 5" )
+
+```
+
+## 5th Grade:
+```{r, message = false}
+# Load Data
+florida_ela_2024_fifth_grade <- read_xls("school_data/florida_data/ela_2024/5ELA05SRDSpring24.xls",skip = 5, col_names = FALSE)
+
+# Fix column names
+colnames(florida_ela_2024_fifth_grade) <- c("District Number", "District Name", "Grade",
+                                     "Number of Students", "Mean Scale Score", 
+                                     "Percentage in Level 3 or Above",
+                                     "Percentage in Achievement Level 1",
+                                     "Percentage in Achievement Level 2",
+                                     "Percentage in Achievement Level 3",
+                                     "Percentage in Achievement Level 4",
+                                     "Percentage in Achievement Level 5" )
+
+```
+
+
+## 6th Grade:
+```{r, message = false}
+# Load Data
+florida_ela_2024_sixth_grade <- read_xls("school_data/florida_data/ela_2024/6ELA06SRDSpring24.xls",skip = 5, col_names = FALSE)
+
+# Fix column names
+colnames(florida_ela_2024_sixth_grade) <- c("District Number", "District Name", "Grade",
+                                     "Number of Students", "Mean Scale Score", 
+                                     "Percentage in Level 3 or Above",
+                                     "Percentage in Achievement Level 1",
+                                     "Percentage in Achievement Level 2",
+                                     "Percentage in Achievement Level 3",
+                                     "Percentage in Achievement Level 4",
+                                     "Percentage in Achievement Level 5" )
+
+```
+
+
+## 7th Grade:
+```{r, message = false}
+# Load Data
+florida_ela_2024_seventh_grade <- read_xls("school_data/florida_data/ela_2024/7ELA07SRDSpring24.xls",skip = 5, col_names = FALSE)
+
+# Fix column names
+colnames(florida_ela_2024_seventh_grade) <- c("District Number", "District Name", "Grade",
+                                     "Number of Students", "Mean Scale Score", 
+                                     "Percentage in Level 3 or Above",
+                                     "Percentage in Achievement Level 1",
+                                     "Percentage in Achievement Level 2",
+                                     "Percentage in Achievement Level 3",
+                                     "Percentage in Achievement Level 4",
+                                     "Percentage in Achievement Level 5" )
+
+```
+
+
+
+## 8th Grade:
+```{r, message = false}
+# Load Data
+florida_ela_2024_eigth_grade <- read_xls("school_data/florida_data/ela_2024/8ELA08SRDSpring24.xls",skip = 5, col_names = FALSE)
+
+# Fix column names
+colnames(florida_ela_2024_eigth_grade) <- c("District Number", "District Name", "Grade",
+                                     "Number of Students", "Mean Scale Score", 
+                                     "Percentage in Level 3 or Above",
+                                     "Percentage in Achievement Level 1",
+                                     "Percentage in Achievement Level 2",
+                                     "Percentage in Achievement Level 3",
+                                     "Percentage in Achievement Level 4",
+                                     "Percentage in Achievement Level 5" )
+
+```
+
+
+## 9th Grade:
+```{r, message = false}
+# Load Data
+florida_ela_2024_ninth_grade <- read_xls("school_data/florida_data/ela_2024/9ELA09SRDSpring24.xls",skip = 5, col_names = FALSE)
+
+# Fix column names
+colnames(florida_ela_2024_ninth_grade) <- c("District Number", "District Name", "Grade",
+                                     "Number of Students", "Mean Scale Score", 
+                                     "Percentage in Level 3 or Above",
+                                     "Percentage in Achievement Level 1",
+                                     "Percentage in Achievement Level 2",
+                                     "Percentage in Achievement Level 3",
+                                     "Percentage in Achievement Level 4",
+                                     "Percentage in Achievement Level 5" )
+```
+
+## 10th Grade:
+```{r, message = false}
+# Load Data
+florida_ela_2024_tenth_grade <- read_xls("school_data/florida_data/ela_2024/10ELA10SRDSpring24.xls",skip = 5, col_names = FALSE)
+
+# Fix column names
+colnames(florida_ela_2024_tenth_grade) <- c("District Number", "District Name", "Grade",
+                                     "Number of Students", "Mean Scale Score", 
+                                     "Percentage in Level 3 or Above",
+                                     "Percentage in Achievement Level 1",
+                                     "Percentage in Achievement Level 2",
+                                     "Percentage in Achievement Level 3",
+                                     "Percentage in Achievement Level 4",
+                                     "Percentage in Achievement Level 5" )
+```

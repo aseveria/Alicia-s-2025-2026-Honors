@@ -10,36 +10,228 @@ execute:
 library(readxl)
 library(dplyr)
 ```
+# 2024 data
 
+# Explore data
+```{r}
+excel_sheets("school_data/24-RC-Pub-Data-Set.xlsx")
+```
+
+# Load 2024 test data
+```{r}
+illinois_test_2024 <- read_xlsx("school_data/24-RC-Pub-Data-Set.xlsx", sheet = "ELAMathScience")
+```
+
+# Load 2024 general data
+```{r}
+illinois_general_2024 <- suppressWarnings(read_xlsx("school_data/24-RC-Pub-Data-Set.xlsx", sheet = "General"))
+```
+
+
+
+# 2023 Data
+
+# Explore data
+```{r}
+excel_sheets("school_data/23-RC-Pub-Data-Set.xlsx")
+```
+
+# Load 2023 test data
+```{r}
+illinois_test_2023 <- read_xlsx("school_data/23-RC-Pub-Data-Set.xlsx", sheet = "ELA Math Science")
+```
+
+# Load 2023 general data
+```{r}
+illinois_general_2023 <- suppressWarnings(read_xlsx("school_data/23-RC-Pub-Data-Set.xlsx", sheet = "General"))
+```
+
+
+# 2022 data
 # Analyzing different tabs in excel sheet
 ```{r}
 excel_sheets("school_data/2022-Report-Card-Public-Data-Set.xlsx")
 ```
 
-# Loading 2022 dataset:
+## Loading 2022 dataset:
 
-# Loading specfically ela, math, and science scores
+### Loading specfically ela, math, and science scores
 ```{r}
-illinois_data_2022 <- read_xlsx("school_data/2022-Report-Card-Public-Data-Set.xlsx", sheet = "ELA Math Science")
+illinois_test_2022 <- read_xlsx("school_data/2022-Report-Card-Public-Data-Set.xlsx", sheet = "ELA Math Science")
 ```
 
-# Loading general information about schools
-
+### Loading general information about schools
 ```{r}
-test <- read_xlsx("school_data/2022-Report-Card-Public-Data-Set.xlsx", sheet = "General")
+illinois_general_2022<- read_xlsx("school_data/2022-Report-Card-Public-Data-Set.xlsx", sheet = "General")
 ```
 
-# Basic exploration of data:
+## Basic exploration of data:
 
-# Found there to be 3 types of scores: for each district, school, and statewide
+### Found there to be 3 types of scores: for each district, school, and statewide
 ```{r}
 unique(illinois_data_2022$Type)
 ```
 
 
+# 2021 data
+# Explore data
+```{r}
+excel_sheets("school_data/2021-RC-Pub-Data-Set.xlsx")
+```
 
 
+# Load 2021 test data
+```{r}
+illinois_test_2021 <- read_xlsx("school_data/2021-RC-Pub-Data-Set.xlsx", sheet = "ELA Math Science")
+```
+
+# Load 2021 general data
+```{r}
+illinois_general_2021 <- read_xlsx("school_data/2021-RC-Pub-Data-Set.xlsx", sheet = "General")
+```
 
 
+# 2020 Data
 
+# Explore data
+```{r}
+excel_sheets("school_data/2020-Report-Card-Public-Data-Set.xlsx")
+```
+
+
+# Load 2020 test data
+```{r}
+illinois_test_2020 <- read_xlsx("school_data/2020-Report-Card-Public-Data-Set.xlsx", sheet = "ELA Math Science")
+```
+
+# Load 2020 general data
+```{r}
+illinois_general_2020 <- read_xlsx("school_data/2020-Report-Card-Public-Data-Set.xlsx", sheet = "General")
+```
+
+
+# 2019 Data
+
+# Explore data
+```{r}
+excel_sheets("school_data/2019-Report-Card-Public-Data-Set.xlsx")
+```
+
+# Load 2019 test data
+```{r}
+illinois_test_2019 <- read_xlsx("school_data/2019-Report-Card-Public-Data-Set.xlsx", sheet = "ELA Math Science")
+```
+
+# Load 2019 general data
+```{r}
+illinois_general_2019 <- suppressWarnings(read_xlsx("school_data/2019-Report-Card-Public-Data-Set.xlsx", sheet = "General"))
+```
+
+
+# 2018 Data
+
+# Explore data
+```{r}
+excel_sheets("school_data/Report-Card-Public-Data-Set_2018.xlsx")
+```
+
+# Load 2018 test data
+```{r}
+illinois_test_2018 <- read_xlsx("school_data/Report-Card-Public-Data-Set_2018.xlsx", sheet = "ELA and Math")
+```
+
+# Load 2018 general data
+```{r}
+illinois_general_2018 <- suppressWarnings(read_xlsx("school_data/Report-Card-Public-Data-Set_2018.xlsx", sheet = "General"))
+```
+
+
+# 2017 Data
+
+# NOTE: The data from 2014-2017 is put into execel files where some rows are identified by 3 column identifiers. Thus below I rename the columns.
+
+```{r}
+illinois_test_2017 <- read_excel("school_data/2017_PARCC_SAT_ACT_enrollment.xlsx", skip = 6, col_names = FALSE)
+```
+
+```{r}
+colnames(illinois_test_2017) <- c(
+  "RCDTS",
+  "County",
+  "Dist #",
+  "District Name/ School Name",
+  "City",
+  "ela_3_exceeding_pct",
+  "math_3_exceeding_pct",
+  "ela_4_exceeding_pct",
+  "math_4_exceeding_pct",
+  "ela_5_exceeding_pct",
+  "math_5_exceeding_pct",
+  "ela_6_exceeding_pct",
+  "math_6_exceeding_pct",
+  "ela_7_exceeding_pct",
+  "math_7_exceeding_pct",
+  "ela_8_exceeding_pct",
+  "math_8_exceeding_pct",
+  "ela_parcc_exceeding_pct",
+  "math_parcc_exceeding_pct",
+  "ela/math_parcc_exceeding_pct",
+  "ela_sat_exceeding_pct",
+  "math_sat_exceeding_pct",
+  "ela/math_sat_exceeding_pct",
+  "ela_PARCC/SAT/DLM_exceeding_pct",
+  "math_PARCC/SAT/DLM_exceeding_pct",
+  "avg_sat_11_overall",
+  "avg_sat_11_ela",
+  "avg_sat_11_math",
+  "avg_act_overall",
+  "enrollment"
+)
+
+```
+
+# Amount of students who took the test 
+```{r}
+illinois_general_2017 <- read_excel("school_data/2017-Participation-Report-All-Districts.xlsx", skip = 4, col_names = FALSE)
+
+```
+
+```{r}
+colnames(illinois_general_2017) <- c(
+  "RCDTS",
+  "County",
+  "District/School",
+  "Dist #",
+  "District Name/ School Name",
+  "City",
+  
+  "ela_participation_rate",
+  "ela_met_95pct_targ4et",
+  "ela_tested_enrollment",
+  "ela_#_tested",
+  "ela_not_tested_absent",
+  "ela_not_tested_refusal",
+  "ela_not_tested_scores_suppresed",
+  
+  "math_participation_rate",
+  "math_met_95pct_target",
+  "math_tested_enrollment",
+  "math_#_tested",
+  "math_not_tested_absent",
+  "math_not_tested_refusal",
+  "math_not_tested_scores_suppresed"
+)
+```
+
+# 2016 data
+```{r}
+illinois_general_2017 <- read_excel("school_data/2017-Participation-Report-All-Districts.xlsx", skip = 4, col_names = FALSE)
+```
+
+2018-PARCC-SAT-Proficient
+
+```{r}
+excel_sheets("school_data/2018-PARCC-SAT-Proficient.xlsx")
+
+```
 
